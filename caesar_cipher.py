@@ -4,11 +4,11 @@ MAX_KEY_SIZE = 26
 
 def getMode():
     while True:
-        mode = input("Do you wish to encrypt or decrypt message?").lower()
-        if mode in "encrypt e decrypt d".split():
+        mode = input("Do you wish to encrypt or decrypt or brute message?").lower()
+        if mode in "encrypt e decrypt d brute b".split():
             return mode
         else:
-            print("Enter encrypt or e / decrypt or d")
+            print("Enter encrypt or e / decrypt or d / brute or b")
 
 def getMessage():
     return input("Input your message: ")
@@ -49,7 +49,12 @@ def getTranslatedMessage(mode, message, key):
 
 mode = getMode()
 message = getMessage()
-key = getKey()
+if mode[0] != 'b':
+    key = getKey()
 
 print("Your translated text is: ")
-print(getTranslatedMessage(mode, message, key))      
+if mode[0] != 'b':
+    print(getTranslatedMessage(mode, message, key))
+else:
+    for key in range(1, MAX_KEY_SIZE + 1):
+        print(key, getTranslatedMessage('decrypt', message, key))
