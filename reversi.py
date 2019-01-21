@@ -5,18 +5,18 @@ import random
 
 def drawBoard(board):
     # This function prints out the board that it was passed. Returns None.
-    HLINE = '  +---+---+---+---+---+---+---+---+'
-    VLINE = '  |   |   |   |   |   |   |   |   |'
-    print('    1   2   3   4   5   6   7   8')
+    HLINE = ' +--------+'
+    # VLINE = '  |   |   |   |   |   |   |   |   |'
+    print('  12345678')
     print(HLINE)
     for y in range(8):
-        print(VLINE)
-        print(y + 1, end = ' ')
+        # print(VLINE)
+        print('%s|' % (y + 1), end = '')
         for x in range(8):
-            print('| %s' % (board[x][y]), end = ' ')
+            print(board[x][y], end = '')
         print('|')
-        print(VLINE)
-        print(HLINE)
+        # print(VLINE)
+    print(HLINE)
 
 def resetBoard(board):
     # Blanks out the board it is passed, except for the original starting position.
