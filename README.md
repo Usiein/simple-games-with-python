@@ -1,2 +1,3 @@
 # simple-games-with-python
-Games for terminal made using Python3
+CLI (and not only) games which made using Python3
+(It's hard to name that stuff games, but I've tried)
